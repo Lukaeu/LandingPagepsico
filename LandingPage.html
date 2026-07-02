@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erika Fernanda | Psicóloga Clínica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sage: #b5c9a8;
+      --sage-light: #d4e3cc;
+      --sage-dark: #7a9e6e;
+      --sage-deep: #4a6e40;
+      --cream: #f9f6f0;
+      --blush: #f2e8e8;
+      --text-dark: #2c3e25;
+      --text-mid: #4a5e42;
+      --text-light: #7a8e72;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, #c8dbbf 0%, #b5c9a8 40%, #a3bb95 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      top: -100px; right: -100px;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      bottom: -80px; left: -80px;
+    }
+    .avatar-ring {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--sage-deep);
+      font-weight: 600;
+      box-shadow: 0 8px 32px rgba(74,110,64,0.2);
+      position: relative; z-index: 1;
+    }
+    .hero-badge {
+      background: rgba(255,255,255,0.25);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: var(--sage-deep);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      position: relative; z-index: 1;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      position: relative; z-index: 1;
+    }
+    .hero h1 span { color: var(--sage-deep); }
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--text-mid);
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+      position: relative; z-index: 1;
+    }
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--sage-deep);
+      margin: 0.5rem 0 1.25rem;
+      position: relative; z-index: 1;
+    }
+    .hero-specs {
+      display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+      margin: 0.5rem 0 2rem;
+      position: relative; z-index: 1;
+    }
+    .spec-tag {
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.6);
+      color: var(--sage-deep);
+      font-size: 12px; font-weight: 500;
+      padding: 5px 12px; border-radius: 20px;
+    }
+    .hero-cta {
+      background: var(--sage-deep);
+      color: white;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-size: 1rem; font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(74,110,64,0.35);
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+      position: relative; z-index: 1;
+    }
+    .hero-cta:hover { background: var(--text-dark); transform: translateY(-2px); }
+    .hero-link {
+      margin-top: 1rem;
+      font-size: 13px; color: var(--text-mid);
+      cursor: pointer; text-decoration: underline;
+      background: none; border: none;
+      font-family: 'Inter', sans-serif;
+      display: block;
+      position: relative; z-index: 1;
+      text-decoration-color: rgba(74,94,66,0.4);
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 5rem 2rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--sage-dark); font-weight: 500; margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 500;
+      color: var(--text-dark); text-align: center;
+      line-height: 1.3; margin-bottom: 1rem;
+    }
+    .section-desc {
+      text-align: center; color: var(--text-mid);
+      font-size: 0.95rem; line-height: 1.7;
+      max-width: 520px; margin: 0 auto 2.5rem;
+    }
+
+    /* ── PARA VOCÊ ── */
+    .for-you-section {
+      background: white;
+      padding: 5rem 2rem;
+      border-bottom: 1px solid rgba(181,201,168,0.2);
+    }
+    .for-you-inner { max-width: 760px; margin: 0 auto; }
+    .for-you-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;
+    }
+    .for-you-item {
+      background: var(--cream);
+      border-radius: 16px; padding: 1.5rem;
+      border: 1px solid rgba(181,201,168,0.25);
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .for-you-icon {
+      font-size: 1.4rem; flex-shrink: 0; margin-top: 2px;
+    }
+    .for-you-item h3 {
+      font-size: 0.9rem; font-weight: 500; color: var(--text-dark);
+      margin-bottom: 0.25rem;
+    }
+    .for-you-item p { font-size: 0.82rem; color: var(--text-light); line-height: 1.5; }
+
+    /* ── ABOUT ── */
+    .about-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      border: 1px solid rgba(181,201,168,0.3);
+      box-shadow: 0 4px 24px rgba(74,110,64,0.06);
+    }
+    .about-card p {
+      color: var(--text-mid); line-height: 1.8; font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .about-card p:last-child { margin-bottom: 0; }
+    .about-highlight {
+      background: #e8f0e3;
+      border-left: 3px solid var(--sage-dark);
+      padding: 1rem 1.25rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--sage-deep);
+      font-size: 0.95rem;
+    }
+    .crp { font-size: 12px; color: var(--text-light); margin-top: 1rem; }
+
+    /* ── AREAS ── */
+    .areas-section { padding: 0 2rem 5rem; max-width: 760px; margin: 0 auto; }
+    .areas-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .area-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(181,201,168,0.3);
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .area-card:hover {
+      box-shadow: 0 6px 24px rgba(74,110,64,0.12);
+      transform: translateY(-2px);
+    }
+    .area-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: #e8f0e3;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.75rem;
+      font-size: 22px;
+    }
+    .area-card h3 {
+      font-size: 0.95rem; font-weight: 500; color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+    .area-card p { font-size: 0.82rem; color: var(--text-light); line-height: 1.5; }
+
+    /* ── HOW ── */
+    .how-section { background: #e8f0e3; padding: 5rem 2rem; }
+    .how-inner { max-width: 760px; margin: 0 auto; }
+    .steps { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+    .step {
+      background: white; border-radius: 16px; padding: 1.25rem 1.5rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+      border: 1px solid rgba(181,201,168,0.3);
+    }
+    .step-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--sage-deep); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 500; font-size: 14px; flex-shrink: 0;
+    }
+    .step h3 { font-size: 0.95rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.25rem; }
+    .step p { font-size: 0.85rem; color: var(--text-light); line-height: 1.5; }
+
+    /* ── EBOOK ── */
+    .ebook-section {
+      background: var(--sage-deep);
+      padding: 5rem 2rem; text-align: center;
+    }
+    .ebook-inner { max-width: 560px; margin: 0 auto; }
+    .ebook-section .section-label { color: rgba(255,255,255,0.6); }
+    .ebook-section .section-title { color: white; font-size: 1.9rem !important; }
+    .ebook-section .section-desc { color: rgba(255,255,255,0.75); }
+    .ebook-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 16px; padding: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+    .ebook-card h3 { color: white; font-size: 1rem; margin-bottom: 0.75rem; font-weight: 500; }
+    .ebook-card ul { list-style: none; padding: 0; }
+    .ebook-card ul li {
+      color: rgba(255,255,255,0.75); font-size: 0.88rem; line-height: 1.6;
+      padding: 4px 0;
+    }
+    .ebook-card ul li::before { content: '✓ '; color: var(--sage-light); }
+    .ebook-cta {
+      background: white; color: var(--sage-deep);
+      border: none; padding: 14px 36px;
+      border-radius: 50px; font-size: 1rem; font-weight: 500;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+      text-decoration: none; display: inline-block;
+    }
+    .ebook-cta:hover { background: var(--cream); transform: translateY(-2px); }
+
+    /* ── CTA FINAL ── */
+    .cta-section {
+      background: white; padding: 6rem 2rem; text-align: center;
+      border-top: 1px solid rgba(181,201,168,0.3);
+    }
+    .cta-inner { max-width: 560px; margin: 0 auto; }
+    .cta-box {
+      background: linear-gradient(135deg, #c8dbbf 0%, #a3bb95 100%);
+      border-radius: 24px; padding: 3rem 2.5rem;
+    }
+    .cta-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem; color: var(--text-dark);
+      margin-bottom: 0.75rem; line-height: 1.3;
+    }
+    .cta-box p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem; }
+    .btn-primary {
+      background: var(--sage-deep); color: white;
+      border: none; padding: 14px 36px;
+      border-radius: 50px; font-size: 1rem; font-weight: 500;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      box-shadow: 0 4px 20px rgba(74,110,64,0.3);
+      transition: all 0.2s;
+      display: block; width: 100%; margin-bottom: 0.75rem;
+      text-decoration: none; text-align: center;
+    }
+    .btn-primary:hover { background: var(--text-dark); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; color: var(--sage-deep);
+      border: 1.5px solid var(--sage-deep); padding: 13px 36px;
+      border-radius: 50px; font-size: 0.95rem; font-weight: 500;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      display: block; width: 100%; transition: all 0.2s;
+      text-decoration: none; text-align: center;
+    }
+    .btn-outline:hover { background: rgba(74,110,64,0.08); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text-dark); color: rgba(255,255,255,0.5);
+      text-align: center; padding: 2.5rem 2rem;
+      font-size: 12px; line-height: 2;
+    }
+    footer span { color: rgba(255,255,255,0.85); }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    footer a:hover { color: white; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .areas-grid { grid-template-columns: 1fr; }
+      .for-you-grid { grid-template-columns: 1fr; }
+      .section-title { font-size: 1.6rem; }
+      .cta-box { padding: 2rem 1.5rem; }
+      .cta-box h2 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="avatar-ring">EF</div>
+    <div class="hero-badge">Psicóloga Clínica · Especialista em Mulheres</div>
+    <h1>Erika <span>Fernanda</span></h1>
+    <p class="hero-sub">Terapia Cognitivo-Comportamental</p>
+    <p class="hero-tagline">Um espaço só seu — para se cuidar de verdade.</p>
+    <div class="hero-specs">
+      <span class="spec-tag">🌸 Saúde da Mulher</span>
+      <span class="spec-tag">Ansiedade</span>
+      <span class="spec-tag">T. Afetivo Bipolar</span>
+      <span class="spec-tag">Autocuidado</span>
+    </div>
+    <!-- Substitua o href pelo número real: https://wa.me/5551999999999 -->
+    <a href="https://wa.me/55SEUNUMERO" target="_blank" class="hero-cta">
+      Agendar minha consulta
+    </a>
+    <a href="#sobre" class="hero-link">Conhecer um pouco mais ↓</a>
+  </section>
+
+  <!-- PARA QUEM É -->
+  <section class="for-you-section" id="para-voce">
+    <div class="for-you-inner">
+      <p class="section-label" style="text-align:center">Para quem é</p>
+      <h2 class="section-title">Você se identifica com algum desses?</h2>
+      <p class="section-desc">Muitas mulheres carregam o peso do mundo sozinhas. Se você se reconhece em algum desses cenários, a terapia pode ser o seu ponto de virada.</p>
+      <div class="for-you-grid">
+        <div class="for-you-item">
+          <div class="for-you-icon">😮‍💨</div>
+          <div>
+            <h3>Ansiedade e sobrecarga</h3>
+            <p>Mente acelerada, dificuldade de descansar, sensação de que nunca é suficiente.</p>
+          </div>
+        </div>
+        <div class="for-you-item">
+          <div class="for-you-icon">💔</div>
+          <div>
+            <h3>Relacionamentos difíceis</h3>
+            <p>Dificuldade de estabelecer limites, padrões que se repetem, medo de ser você mesma.</p>
+          </div>
+        </div>
+        <div class="for-you-item">
+          <div class="for-you-icon">🪞</div>
+          <div>
+            <h3>Baixa autoestima</h3>
+            <p>Dúvida constante de si mesma, comparação com outras, voz interna crítica demais.</p>
+          </div>
+        </div>
+        <div class="for-you-item">
+          <div class="for-you-icon">🌊</div>
+          <div>
+            <h3>Oscilações emocionais</h3>
+            <p>Altos e baixos intensos, dificuldade de regular as emoções no dia a dia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <div class="section" id="sobre">
+    <p class="section-label">Sobre mim</p>
+    <h2 class="section-title">Olá, eu sou a Erika</h2>
+    <div class="about-card">
+      <p>Sou psicóloga clínica com especialização em Terapia Cognitivo-Comportamental (TCC) e atendo mulheres que estão prontas para se reconectar consigo mesmas — seja em meio à ansiedade, aos desafios emocionais ou à busca por autoconhecimento.</p>
+      <div class="about-highlight">
+        "Acredito que cada mulher carrega em si uma força que às vezes precisa apenas de um espaço seguro para emergir."
+      </div>
+      <p>Minha abordagem combina técnica e escuta genuína, criando um ambiente acolhedor onde você pode explorar seus pensamentos e emoções com segurança e sem julgamentos.</p>
+      <p class="crp">CRP — Psicóloga Clínica registrada</p>
+    </div>
+  </div>
+
+  <!-- ESPECIALIDADES -->
+  <div class="areas-section" id="especialidades">
+    <p class="section-label" style="text-align:center">Especialidades</p>
+    <h2 class="section-title">Como posso te ajudar</h2>
+    <p class="section-desc">Atendimento especializado para mulheres que buscam equilíbrio emocional, autoconhecimento e mais qualidade de vida.</p>
+    <div class="areas-grid">
+      <div class="area-card">
+        <div class="area-icon">🌸</div>
+        <h3>Saúde Mental da Mulher</h3>
+        <p>Acolhimento especializado para os desafios emocionais únicos da jornada feminina.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-icon">✨</div>
+        <h3>Autoestima e Autoconfiança</h3>
+        <p>Ressignificar crenças limitantes e construir uma relação mais gentil consigo mesma.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-icon">💬</div>
+        <h3>Relacionamentos e Limites</h3>
+        <p>Desenvolver comunicação assertiva, impor limites saudáveis e cuidar dos vínculos.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-icon">🧠</div>
+        <h3>Ansiedade e T. Bipolar</h3>
+        <p>Técnicas de TCC para regulação emocional, manejo da ansiedade e estabilidade.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMO FUNCIONA -->
+  <section class="how-section" id="como-funciona">
+    <div class="how-inner">
+      <p class="section-label" style="text-align:center">Como funciona</p>
+      <h2 class="section-title">Seu processo terapêutico</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Primeiro contato</h3>
+            <p>Entre em contato pelo WhatsApp ou Instagram para agendar sua sessão inicial.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Sessão de acolhimento</h3>
+            <p>Conversamos sobre suas demandas, objetivos e como a terapia pode te ajudar.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Processo terapêutico</h3>
+            <p>Sessões semanais com técnicas de TCC personalizadas para a sua realidade.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>
+            <h3>Evolução contínua</h3>
+            <p>Acompanhamento do seu progresso e ajustes conforme suas necessidades evoluem.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EBOOK -->
+  <section class="ebook-section" id="ebook">
+    <div class="ebook-inner">
+      <p class="section-label">Material gratuito</p>
+      <h2 class="section-title">Ebook sobre Ansiedade</h2>
+      <p class="section-desc">Um guia prático para entender e lidar com a ansiedade no cotidiano.</p>
+      <div class="ebook-card">
+        <h3>O que você vai encontrar</h3>
+        <ul>
+          <li>Como a ansiedade funciona no seu corpo e mente</li>
+          <li>Técnicas de respiração e regulação emocional</li>
+          <li>Exercícios de TCC para o dia a dia</li>
+          <li>Quando buscar ajuda profissional</li>
+        </ul>
+      </div>
+      <!-- Substitua o href pelo link real do ebook -->
+      <a href="#" class="ebook-cta">Quero meu ebook gratuito</a>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section" id="contato">
+    <div class="cta-inner">
+      <p class="section-label">Vamos começar</p>
+      <div class="cta-box">
+        <h2>Você merece um espaço só seu</h2>
+        <p>Dar o primeiro passo é o mais difícil — e você já está aqui. Agende sua consulta e vamos construir juntas um caminho de autocuidado e equilíbrio.</p>
+        <!-- Substitua pelo número real -->
+        <a href="https://wa.me/55SEUNUMERO" target="_blank" class="btn-primary">Agendar consulta agora</a>
+        <a href="https://www.instagram.com/psierika.fernanda" target="_blank" class="btn-outline">Seguir no Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>Erika Fernanda</span> · Psicóloga Clínica · CRP<br>
+    Especialista em Saúde Mental da Mulher · TCC · Transtornos Ansiosos<br><br>
+    <a href="https://www.instagram.com/psierika.fernanda" target="_blank">@psierika.fernanda</a>
+  </footer>
+
+</body>
+</html>
