@@ -20,7 +20,6 @@ body {
   line-height: 1.7;
 }
 
-/* ── BOTÃO VOLTAR AO TOPO (controlado via JS) ── */
 .back-to-top {
   position: fixed;
   bottom: 24px;

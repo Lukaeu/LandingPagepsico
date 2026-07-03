@@ -1,12 +1,6 @@
-// ============================================
-// script.js — Interações da Landing Page
-// Erika Fernanda | Psicóloga Clínica
-// ============================================
-
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ── 1) Botão "Voltar ao topo" ──
-  // Aparece só depois que o usuário rola a página, e some quando volta pro topo
+
   const backToTopBtn = document.getElementById("backToTop");
 
   window.addEventListener("scroll", () => {
@@ -22,9 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // ── 2) Animação de "revelar" elementos ao rolar a página ──
-  // Usa a Intersection Observer API: quando um elemento com a
-  // classe .reveal entra na tela, ganha a classe .active (definida no CSS)
+
   const revealElements = document.querySelectorAll(".reveal");
 
   const revealObserver = new IntersectionObserver((entries) => {
@@ -41,9 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   revealElements.forEach((el) => revealObserver.observe(el));
 
 
-  // ── 3) Botão do Ebook ──
-  // Como ainda não existe um link de download definitivo,
-  // o JS mostra um aviso amigável em vez de dar erro 404
+
   const ebookBtn = document.getElementById("ebookBtn");
 
   ebookBtn.addEventListener("click", () => {
@@ -51,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // ── 4) Log simples de boas-vindas no console ──
   console.log("Landing page da Erika Fernanda carregada com sucesso 🌿");
 
 });
